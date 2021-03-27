@@ -1,0 +1,64 @@
+{% extends 'edu/basic.html' %}
+<title>{%block title%} Donate {%endblock%}</title>
+{% block css%}
+<style>
+    form {
+        width: 70%;
+        margin-top: 40px;
+        margin-left: 300px;
+        border-radius: 10px;
+        font-size: 20px;
+
+    }
+
+    .container {
+        box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+        margin-left: 400px;
+        margin-right: 400px;
+        align-items: center;
+        height: 600px;
+
+    }
+
+    label,
+    input {
+        display: inline-block;
+        text-align: left;
+        width: 30%;
+        padding: 15px;
+
+    }
+
+    label+input {
+        width: 50%;
+        margin: 10px 30% 0 4%;
+    }
+
+    input+input {
+        float: right;
+
+    }
+
+    .btn {
+        margin-left: 200px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+</style>
+{% endblock %}
+{% block content %}
+
+
+
+<div class="container">
+    <h1> Donate useful information as a volunteer</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn" type="submit">Upload</button>
+    </form>
+</div>
+
+{% endblock %}

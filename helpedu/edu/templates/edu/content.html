@@ -1,0 +1,55 @@
+{% extends 'edu/basic.html'%}
+<title>
+    {%block title%}Edu-Content{%endblock%}
+</title>
+{% block css%}
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    table {
+        border: 1px solid black;
+        table-layout: fixed;
+        width: 100%;
+
+
+
+    }
+
+    td,
+    th {
+        padding: 15px;
+        border: 1px solid black;
+        width: 20px;
+        border-bottom: 1px solid #ddd;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+</style>
+{% endblock%}
+{% block body %}
+<h1>Donated by volunteers</h1>
+<table>
+    <th>Sr.No</th>
+    <th>Document Name</th>
+    <th>Document url</th>
+    <th>Description</th>
+    <th>Download here</th>
+    {%for i in docs%}
+
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.document}}</td>
+        <td>{{i.description}}</td>
+        <td><button class="btn"><a href="/media/{{i.document}}" target="_blank" download>Download</a></button></td>
+    </tr>
+    {%endfor%}
+</table>
+
+{%endblock%}

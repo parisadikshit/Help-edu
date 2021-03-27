@@ -1,0 +1,101 @@
+{% extends 'edu/basic.html'%}
+<title>{%block title%} Schools {%endblock%}</title>
+
+{% load static%}
+{% block css %}
+<style>
+  .cards-list {
+    z-index: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    margin: 40px auto;
+    background-color: white;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+    cursor: pointer;
+    transition: 0.4s;
+  }
+
+  .card .card_title {
+    text-align: center;
+    border-radius: 0px 0px 40px 40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    margin-top: -20px;
+    height: 40px;
+  }
+
+  .card:hover {
+    transform: scale(0.9, 0.9);
+    box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+      -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+  }
+
+  .title {
+    color: black;
+  }
+
+  p {
+    margin-top: 50px;
+    margin-left: 20px;
+  }
+
+  .btnpos {
+    align-items: center;
+    margin-left: 50px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  @media all and (max-width: 500px) {
+    .card-list {
+      flex-direction: column;
+    }
+  }
+
+  /*body{
+            background-image: url("{% static 'edu/quality-education.jpg' %}");
+            background-repeat: no-repeat;
+            
+          }*/
+</style>
+
+{% endblock%}
+
+{%block body %}
+
+<body>
+  <div class="cards-list">
+    <div class="card 1">
+      <div class="card_title title">
+        <p>{{schools.0.School_name}}</p>
+      </div>
+      <p>City : {{schools.0.School_city}}</p>
+      <button class="btn btnpos"><a href="{{schools.0.School_loc}}">View Area</a></button>
+    </div>
+
+    {% for i in schools|slice:"1:"%}
+    <div class="card 1">
+
+      <div class="card_title title">
+        <p>{{i.School_name}}</p>
+      </div>
+      <p>City : {{i.School_city}}</p>
+      <button class="btn btnpos"><a href="{{i.School_loc}}">View Area</a></button>
+    </div>
+
+    {% endfor %}
+  </div>
+</body>
+{% endblock %}

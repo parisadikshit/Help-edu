@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{%endblock%}</title>
+</head>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@800&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        height: 1000px;
+        font-family: 'Baloo Bhai 2', cursive;
+    }
+
+    .mid {
+
+        display: block;
+        width: 33%;
+        margin: 100px auto;
+        background-color: rgb(176, 207, 36);
+        border-radius: 20px;
+        box-shadow: 5px 3px 3px 5px rgba(0, 0, 0, 0.5);
+        position: sticky;
+        text-align: center;
+        top: 0px;
+    }
+
+    .left {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        display: inline-block;
+        /* border: 2px solid black; */
+
+    }
+
+    .navbar {
+        display: inline-block;
+
+    }
+
+    .navbar li {
+        color: white;
+        display: inline-block;
+        font-size: 35px;
+    }
+
+    .navbar li a {
+        color: rgb(155, 19, 26);
+        text-decoration: none;
+        padding: 35px 23px;
+    }
+
+    .navbar li a:hover,
+    .navbar li a.active {
+        text-decoration: underline;
+        color: white;
+    }
+
+    .btn {
+        margin: 5px 5px;
+        background: rgb(176, 207, 36);
+        color: white;
+        padding: 4px 14px;
+        border: 2px solid yellow;
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        font-family: 'Baloo Bhai 2', cursive;
+
+    }
+
+    footer {
+        background-color: #f2f2f2;
+        text-align: center;
+        margin-top: 300px;
+        padding: 10px;
+    }
+</style>
+{% block css %}{% endblock%}
+
+<body>
+
+    {% load static %}
+
+    <header class="header">
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="\">Home</a></li>
+                <li><a href="\donate">Donate</a></li>
+                <li><a href="\schools">Schools</a></li>
+                <li><a href="\content">Edu-Content</a></li>
+            </ul>
+        </div>
+    </header>
+    {% block content %}
+    {%endblock%}
+    {% block body %}{% endblock %}
+
+    <footer>Developed by Our Team</footer>
+</body>
+
+</html>

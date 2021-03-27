@@ -1,0 +1,69 @@
+{% extends 'edu/basic.html' %}
+<title>{%block title%} Help Edu | Home {%endblock%}</title>
+
+{%block css%}
+<style>
+    p {
+        color: rgb(155, 19, 26);
+        text-align: center;
+    }
+
+    .rect-list {
+        margin-top: 50px;
+        z-index: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .rect {
+        background-color: rgb(176, 207, 36);
+        margin: 40px auto;
+        background-color: white;
+        width: 500px;
+        height: 300px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+        cursor: pointer;
+        transition: 0.4s;
+        align-items: center;
+    }
+    .vid{
+        margin-top: 20px;
+        margin-left: 20px;
+        width: 460px;
+        height: 250px;
+        border-radius: 10px;
+        align-items: center;
+    }
+</style>
+{%endblock%}
+
+
+{% block body%}
+<p>This websites is concerned for the helpers,educaters to find rural areas near them to teach them </p>
+
+<div class="rect-list">
+    <div class="rect">
+        <div class="card_title title">
+            <iframe class="vid"src="https://youtube.com/embed/_kZVMsMt86o">
+            </iframe>
+        </div>
+    </div>
+    <div class="rect">
+        <div class="card_title title">
+            <iframe class="vid"src="https://www.youtube.com/embed/Un5msddQl6U">
+            </iframe>
+        </div>
+    </div>
+    <div class="rect">
+        <div class="card_title title">
+            <iframe class="vid"src="https://www.youtube.com/embed/gHV6WC-TEwY">
+            </iframe>
+        </div>
+    </div>
+    
+</div>
+{%endblock%}
+<
